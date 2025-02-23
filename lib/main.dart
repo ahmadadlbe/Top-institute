@@ -11,14 +11,12 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   // await Firebase.initializeApp(
   //   options: DefaultFirebaseOptions.currentPlatform,
-  // );
-
   await di.init();
   // LocalNotificationService.initialize();
   // await _initFirebaseMessaging();
   // FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
   // await StorageHandler().init();
-  // await EasyLocalization.ensureInitialized();
+  await EasyLocalization.ensureInitialized();
   EasyLocalization.logger.enableBuildModes = [];
   runApp(
     DevicePreview(
@@ -65,27 +63,20 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        // BlocProvider(create: (context) => di.sl<LoginCubit>()),
-     
-      ],
-      child: ScreenUtilInit(
-        designSize: const Size(360, 800),
-        minTextAdapt: true,
-        splitScreenMode: true,
-        builder: (_, child) {
-          return MaterialApp.router(
-            debugShowCheckedModeBanner: false,
-            title: 'Top institute',
-           
-            routerConfig: AppRouter.router,
-            localizationsDelegates: context.localizationDelegates,
-            locale: context.locale,
-            supportedLocales: context.supportedLocales,
-          );
-        },
-      ),
+    return ScreenUtilInit(
+      designSize: const Size(360, 800),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (_, child) {
+        return MaterialApp.router(
+          debugShowCheckedModeBanner: false,
+          title: 'Top institute',
+          routerConfig: AppRouter.router,
+          localizationsDelegates: context.localizationDelegates,
+          locale: context.locale,
+          supportedLocales: context.supportedLocales,
+        );
+      },
     );
   }
 }
