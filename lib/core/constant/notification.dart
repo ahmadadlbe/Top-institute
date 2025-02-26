@@ -2,8 +2,7 @@ import 'dart:developer';
 
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
-
-import 'colors_app.dart';
+import 'package:top_institute/core/widget/app_theme.dart';
 
 class LocalNotificationService {
   // Instance of Flutternotification plugin

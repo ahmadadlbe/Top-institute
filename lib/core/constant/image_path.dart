@@ -34,4 +34,6 @@ const String kImageBreakfastCuisine = "assets/images/breakfast.png";
 const String kImageLunchCuisine = "assets/images/lunch.png";
 const String kImageDinnerCuisine = "assets/images/dinner.png";
 const String kImageCouponZone = "assets/images/coponzone.png";
-const String kImageShark = "assets/images/shark.png";
+const String kImageLogin = "assets/images/login.png";
+const String kImageLogoBlack = 'assets/images/LOGO for Yazan-01.png';
+const String kImageLogoWhite = 'assets/images/LOGO for Yazan-02.png';

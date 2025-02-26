@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:top_institute/core/widget/app_theme.dart';
 
-
-
-import '../constant/colors_app.dart';
 import 'app_text.dart';
 
 class TryAgainWidget extends StatelessWidget {
@@ -18,7 +16,11 @@ class TryAgainWidget extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          AppCustomText(text: "Try Again",colorText: kColorBlack,fontSize: 20.sp,),
+          AppCustomText(
+            text: "Try Again",
+            colorText: kColorBlack,
+            fontSize: 20.sp,
+          ),
           Icon(
             Icons.refresh,
             size: 35.sp,
@@ -27,7 +29,5 @@ class TryAgainWidget extends StatelessWidget {
         ],
       ),
     );
-
-   
   }
 }
