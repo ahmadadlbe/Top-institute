@@ -6,6 +6,7 @@ class ApisWords {
  
 // =============Auth=========
   static String get login => "/login";
+  static String get home => "/home";
 
  
 }

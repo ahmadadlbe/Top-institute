@@ -1,12 +1,9 @@
-
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../constant/colors_app.dart';
+import 'package:top_institute/core/widget/app_theme.dart';
 import 'app_text.dart';
-
 
 class AppCustomTextFormField extends StatefulWidget {
   final TextEditingController? controller;
@@ -73,7 +70,7 @@ class AppCustomTextFormField extends StatefulWidget {
     this.fillColor,
     this.contentPadding,
     this.isRequired = true,
-    this.isfilled = true,
+    this.isfilled = false,
     this.fontSize,
     this.hintfontSize,
     this.labelWidget,
@@ -145,13 +142,13 @@ class _AppTextFormFieldState extends State<AppCustomTextFormField> {
 
                 filled: widget.isfilled,
                 hintStyle: TextStyle(
-                  color: widget.colorHint ?? kColorSecondaryText,
+                  color: widget.colorHint,
                   fontSize: widget.hintfontSize ?? 14.sp,
                   fontWeight: widget.hintFontWeight,
                 ),
                 disabledBorder: OutlineInputBorder(
                   borderRadius:
-                      widget.borderRadius ?? BorderRadius.circular(25),
+                      widget.borderRadius ?? BorderRadius.circular(8.r),
                   borderSide: BorderSide(
                     color: widget.borderColor ?? kColorTertiaryText,
                   ),
@@ -159,21 +156,21 @@ class _AppTextFormFieldState extends State<AppCustomTextFormField> {
 
                 focusedBorder: OutlineInputBorder(
                   borderRadius:
-                      widget.borderRadius ?? BorderRadius.circular(25),
+                      widget.borderRadius ?? BorderRadius.circular(8.r),
                   borderSide: BorderSide(
                     color: widget.borderColor ?? kColorTertiaryText,
                   ),
                 ),
                 border: OutlineInputBorder(
                   borderRadius:
-                      widget.borderRadius ?? BorderRadius.circular(25),
+                      widget.borderRadius ?? BorderRadius.circular(8.r),
                   borderSide: BorderSide(
                     color: widget.borderColor ?? kColorTertiaryText,
                   ),
                 ),
                 enabledBorder: OutlineInputBorder(
                   borderRadius:
-                      widget.borderRadius ?? BorderRadius.circular(25),
+                      widget.borderRadius ?? BorderRadius.circular(8.r),
                   borderSide: BorderSide(
                     color: widget.borderColor ?? kColorTertiaryText,
                   ),
@@ -185,32 +182,22 @@ class _AppTextFormFieldState extends State<AppCustomTextFormField> {
                 labelStyle:
                     TextStyle(color: widget.colorLable, fontFamily: "Poppins"),
                 hintText: widget.hint?.tr(),
-                prefixIcon:
-                   widget.prefixIcon,
-                suffixIcon:
-                   widget.icon ??
-                            (widget.isPass
-                                ? IconButton(
-                                    onPressed: () {
-                                      setState(() {
-                                        _hide = !_hide;
-                                      });
-                                    },
-                                    icon: _hide
-                                        ? Icon(
-                                            Icons.visibility_off,
-                                            size: 18.sp,
-                                            color: widget.passIconColor ??
-                                                kColorPlaceholder,
-                                          )
-                                        : Icon(
-                                            Icons.visibility,
-                                            size: 18.sp,
-                                            color: widget.passIconColor ??
-                                                kColorPlaceholder,
-                                          ),
-                                  )
-                                : null),
+                prefixIcon: widget.prefixIcon,
+                suffixIcon: widget.icon ??
+                    (widget.isPass
+                        ? IconButton(
+                            onPressed: () {
+                              setState(() {
+                                _hide = !_hide;
+                              });
+                            },
+                            icon: _hide
+                                ? Icon(Icons.visibility_off,
+                                    size: 18.sp, color: widget.passIconColor)
+                                : Icon(Icons.visibility,
+                                    size: 18.sp, color: widget.passIconColor),
+                          )
+                        : null),
                 // isDense: true,
               ),
               obscureText: widget.isPass && _hide,

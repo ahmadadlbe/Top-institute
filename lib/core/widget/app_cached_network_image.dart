@@ -1,8 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-
-import '../constant/colors_app.dart';
+import 'package:top_institute/core/widget/app_theme.dart';
 import '../constant/image_path.dart';
 
 class AppCustomCachedNetworkImage extends StatefulWidget {

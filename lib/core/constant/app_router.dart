@@ -1,27 +1,40 @@
 import 'package:flutter/material.dart';
 
 import 'package:go_router/go_router.dart';
-
+import 'package:top_institute/feature/auth/login/presentation/pages/login_screen.dart';
+import 'package:top_institute/feature/home/presentation/pages/home_screen.dart';
+import 'package:top_institute/feature/notification/presentation/pages/notification_screen.dart';
 
 // GoRouter configuration
 class AppRouter {
-  static String loginScreen =
-      // prefs.getString("token") == null ? "/" :
-      "/login";
+  static String loginScreen = "/";
+  static String homeScreen = "/homeScreen";
   static const stateSignupScreen = "/stateSignupScreen";
-  
+  static const notificationScreen = "/NotificationScreen";
 
   static final router = GoRouter(
     routes: [
-  
       GoRoute(
         path: loginScreen,
         pageBuilder: (context, state) => customTransitionPage(
           key: state.pageKey,
-          child:  Container(),
+          child: LoginScreen(),
         ),
       ),
-    
+      GoRoute(
+        path: homeScreen,
+        pageBuilder: (context, state) => customTransitionPage(
+          key: state.pageKey,
+          child: HomeScreen(),
+        ),
+      ),
+      GoRoute(
+        path: notificationScreen,
+        pageBuilder: (context, state) => customTransitionPage(
+          key: state.pageKey,
+          child: NotificationScreen(),
+        ),
+      ),
     ],
   );
 }

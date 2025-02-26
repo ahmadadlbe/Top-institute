@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:top_institute/core/widget/app_theme.dart';
 
-import '../constant/colors_app.dart';
 import 'app_button.dart';
 import 'app_text.dart';
 
